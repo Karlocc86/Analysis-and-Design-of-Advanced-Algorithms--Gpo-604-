@@ -5,3 +5,4 @@ cmake-build-*/
 *.out
 node_modules/
 "@ | Out-File -FilePath .gitignore -Encoding utf8
+.junie/
