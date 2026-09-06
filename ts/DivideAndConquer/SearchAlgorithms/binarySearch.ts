@@ -1,4 +1,3 @@
-
 type Comparator<T> = (a: T, b: T) => number; 
 const defaultCompare = <T>(a: T, b: T): number => (a < b) ? -1 : (a > b) ? 1 : 0;
 

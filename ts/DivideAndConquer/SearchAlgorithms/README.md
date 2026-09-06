@@ -20,15 +20,6 @@ binarySearchRecursive<T>(arr, target, compare?, lo?, hi?): number
 - `lo` y `hi`: limites opcionales del rango de busqueda.
 - Retorna el indice encontrado o `-1` si el objetivo no existe.
 
-## Ejemplo
-
-```ts
-const values = [1, 3, 5, 7, 9];
-const position = binarySearchRecursive(values, 7);
-
-console.log(position); // 3
-```
-
 ## Complejidad
 
 | Metrica          | Complejidad                 |
