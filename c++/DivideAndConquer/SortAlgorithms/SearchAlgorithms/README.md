@@ -1,27 +1,42 @@
-# Búsqueda Binaria Recursiva (Binary Search) en C++
+# Búsqueda Binaria Recursiva en C++
 
-Implementación del algoritmo clásico de **Búsqueda Binaria** en C++ moderno, utilizando un generador de números pseudoaleatorios (`<random>`) para definir el valor objetivo de forma dinámica.
-
----
+Implementación recursiva de **Búsqueda Binaria** en C++, con generación pseudoaleatoria del valor objetivo.
 
 ## Descripción
 
-El programa selecciona aleatoriamente un número entero en el rango cerrado $[0, 100]$ y emplea búsqueda binaria recursiva para encontrarlo dividiendo el espacio de búsqueda a la mitad en cada paso.
+El programa genera un objetivo entero con `std::uniform_int_distribution`, aplica búsqueda binaria sobre el intervalo `[0, 100]` y muestra el resultado encontrado. En cada llamada, el rango se reduce aproximadamente a la mitad.
 
-### Características
-* **Generación moderna de aleatorios:** Emplea `std::random_device`, `std::mt19937` (Mersenne Twister) y `std::uniform_int_distribution`.
-* **Cálculo seguro del punto medio:** Usa `mid = low + (high - low) / 2` para evitar desbordamientos aritméticos (*overflow* de enteros).
-* **Propagación recursiva estricta:** Retorna explícitamente las llamadas recursivas para garantizar que el valor fluya de regreso en la pila de ejecución.
+## Funcionamiento
 
----
+- `std::random_device` obtiene la semilla del generador.
+- `std::mt19937` genera la secuencia pseudoaleatoria.
+- `binarySearch` compara el objetivo con el punto medio y continúa en el subrango correspondiente.
+- Si el valor no está dentro del intervalo buscado, retorna `-1`.
 
 ## Complejidad
 
-| Métrica | Complejidad | Detalle |
-| :--- | :--- | :--- |
-| **Tiempo (Peor / Promedio)** | $O(\log n)$ | El espacio de búsqueda se reduce a la mitad en cada iteración. |
-| **Tiempo (Mejor caso)** | $O(1)$ | Ocurre si el elemento central inicial coincide con el objetivo. |
-| **Espacio auxiliar** | $O(\log n)$ | Debido a la memoria utilizada por la pila de llamadas recursivas (*call stack*). |
+| Métrica          | Complejidad                 |
+| :--------------- | :-------------------------- |
+| Tiempo           | `O(log n)`                  |
+| Mejor caso       | `O(1)`                      |
+| Espacio auxiliar | `O(log n)` por la recursión |
 
----
-}
+## Requisitos
+
+- Compilador compatible con C++14 o superior.
+- Biblioteca estándar de C++.
+
+## Ejecución directa
+
+Desde la raíz del repositorio:
+
+```bash
+g++ -std=c++14 c++/DivideAndConquer/SortAlgorithms/SearchAlgorithms/binarySearch.cpp -o binarySearch
+./binarySearch
+```
+
+En Windows, el ejecutable generado puede ser `binarySearch.exe`.
+
+## Nota sobre el rango
+
+El generador está configurado con el intervalo `[0, 101]`, mientras que la búsqueda se ejecuta sobre `[0, 100]`. Por ello, si el objetivo generado es `101`, el programa retorna `-1` de forma esperada.
