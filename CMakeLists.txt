@@ -35,8 +35,13 @@ add_executable(testDijkstra
 
 add_test(NAME DijkstraTest COMMAND testDijkstra)
 
-add_executable(mergeSort
-
+add_library(mergeSort
         "c++/DivideAndConquer/SortAlgorithms/MergeSort/mergeSort.cpp"
-
 )
+
+add_executable(testMergeSort
+        "c++/DivideAndConquer/SortAlgorithms/MergeSort/test_mergeSort.cpp"
+)
+
+target_link_libraries(testMergeSort PRIVATE mergeSort)
+add_test(NAME MergeSortTest COMMAND testMergeSort)

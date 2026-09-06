@@ -8,7 +8,9 @@ El algoritmo divide el vector en dos mitades hasta obtener segmentos de uno o ce
 
 La funcion `mergeSort` retorna un nuevo vector ordenado y deja intacto el vector original.
 
-La funcion `main` muestra el vector antes y despues del ordenamiento.
+La implementacion se compila como una biblioteca para que pueda reutilizarse y probarse desde otros archivos.
+
+Las pruebas automatizadas se encuentran en `test_mergeSort.cpp` y verifican vectores vacios, un solo elemento, valores repetidos, numeros negativos y que el vector original no se modifique.
 
 ## Complejidad
 
@@ -23,19 +25,19 @@ El espacio auxiliar se utiliza para crear los vectores izquierdo, derecho y resu
 - Compilador compatible con C++14 o superior.
 - CMake, si se utiliza la configuracion del proyecto.
 
-## Ejecucion directa
+## Ejecucion de las pruebas
 
-Desde la raiz del repositorio:
+Desde la raiz del repositorio, despues de configurar CMake:
 
 ```bash
-g++ -std=c++14 c++/DivideAndConquer/SortAlgorithms/MergeSort/mergeSort.cpp -o mergeSort
-./mergeSort
+cmake --build cmake-build-debug --target testMergeSort
+ctest --test-dir cmake-build-debug -R MergeSortTest --output-on-failure
 ```
 
-En Windows, el ejecutable generado puede ser `mergeSort.exe`.
+En Windows, el ejecutable generado puede ser `testMergeSort.exe`.
 
 ## Estructura principal
 
 - `merge`: combina dos vectores ordenados en un unico vector ordenado.
 - `mergeSort`: divide el vector y ordena recursivamente cada mitad.
-- `main`: ejecuta el algoritmo y muestra los resultados.
+- `test_mergeSort.cpp`: valida el comportamiento del algoritmo mediante pruebas automatizadas.
