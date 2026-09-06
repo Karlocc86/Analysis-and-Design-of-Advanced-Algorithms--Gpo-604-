@@ -22,4 +22,15 @@ add_executable(greedyDijkstra
         c++/Greedy/GreedyDijkstra/Dijkstra.cpp
         c++/Greedy/GreedyDijkstra/Dijkstra.h
 
+
 )
+
+enable_testing()
+
+add_executable(testDijkstra
+        "c++/Greedy/GreedyDijkstra/MyGraph.cpp"
+        "c++/Greedy/GreedyDijkstra/Dijkstra.cpp"
+        "c++/Greedy/GreedyDijkstra/test_dijkstra.cpp"
+)
+
+add_test(NAME DijkstraTest COMMAND testDijkstra)

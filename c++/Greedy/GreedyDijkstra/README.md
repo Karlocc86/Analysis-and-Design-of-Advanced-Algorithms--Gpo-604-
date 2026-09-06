@@ -49,10 +49,10 @@ vacio. Las distancias inalcanzables se almacenan como `INF`.
 La implementacion utiliza un `std::priority_queue` como min-heap y aplica
 eliminacion perezosa para descartar entradas obsoletas.
 
-| Metrica | Complejidad |
-| :------ | :---------- |
+| Metrica | Complejidad        |
+| :------ | :----------------- |
 | Tiempo  | `O((V + E) log V)` |
-| Espacio | `O(V + E)` |
+| Espacio | `O(V + E)`         |
 
 Donde `V` es el numero de vertices y `E` el numero de aristas.
 
@@ -86,3 +86,30 @@ cmake --build build --target greedyDijkstra
 El programa de ejemplo en `main.cpp` prueba grafos dirigidos y no dirigidos,
 vertices aislados y el manejo de errores por pesos negativos u origen
 inexistente.
+
+## Pruebas automaticas
+
+El archivo `test_dijkstra.cpp` contiene pruebas automaticas para verificar:
+
+- La distancia minima entre vertices.
+- La reconstruccion de una ruta.
+- La ausencia de rutas disponibles.
+- El rechazo de pesos negativos.
+
+Para compilar y ejecutar las pruebas con CMake:
+
+```bash
+cmake --build build --target testDijkstra
+ctest --test-dir build --output-on-failure
+```
+
+Tambien se puede ejecutar directamente el archivo generado:
+
+```bash
+./build/testDijkstra
+```
+
+En Windows, el ejecutable es `testDijkstra.exe`. Un mensaje como
+`Process finished with exit code 0` significa que todas las pruebas terminaron
+correctamente. Si un `assert` falla, el proceso termina con un codigo distinto
+de cero.
