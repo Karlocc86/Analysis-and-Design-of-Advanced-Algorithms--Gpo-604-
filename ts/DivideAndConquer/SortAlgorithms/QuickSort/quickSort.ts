@@ -10,7 +10,7 @@ function swap(list: number[], a:number, b:number): void{
     
 }
 
-function conquer(list : number[], left : number, right: number): number{
+function partition(list : number[], left : number, right: number): number{
 
     const pivote: number = list[right];
     let orange: number = left - 1;
@@ -30,19 +30,19 @@ function conquer(list : number[], left : number, right: number): number{
 
 }
 
-export function divide(list: number[], left: number, right:number): void{
+export function quickSort(list: number[], left: number, right:number): void{
 
     if(left < right){
 
-        const pivote : number = conquer(list, left, right)
-        divide(list, left, pivote - 1)
-        divide(list, pivote + 1 , right)
+        const pivote : number = partition(list, left, right)
+        quickSort(list, left, pivote - 1)
+        quickSort(list, pivote + 1 , right)
     }
 
 }
 
 console.log("La lista antes del sort=", list)
 
-divide(list, 0 , right)
+quickSort(list, 0 , right)
 
 console.log("La lista despues del sort=", list)
