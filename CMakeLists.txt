@@ -34,3 +34,9 @@ add_executable(testDijkstra
 )
 
 add_test(NAME DijkstraTest COMMAND testDijkstra)
+
+add_executable(mergeSort
+
+        "c++/DivideAndConquer/SortAlgorithms/MergeSort/mergeSort.cpp"
+
+)
