@@ -93,8 +93,12 @@ El archivo `test_dijkstra.cpp` contiene pruebas automaticas para verificar:
 
 - La distancia minima entre vertices.
 - La reconstruccion de una ruta.
+- El caso en que el origen y el destino son el mismo vertice.
 - La ausencia de rutas disponibles.
+- Los grafos dirigidos y los vertices aislados.
+- Dos caminos distintos con el mismo costo.
 - El rechazo de pesos negativos.
+- El rechazo de un vertice origen inexistente.
 
 Para compilar y ejecutar las pruebas con CMake:
 
