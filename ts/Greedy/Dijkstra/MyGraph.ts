@@ -25,6 +25,10 @@ export class MyGraph {
 
     agregarArista( origen : string, destino:string, peso:number): void{
 
+        if(!Number.isFinite(peso)){
+            throw new Error(`En dijkstra se requieren pesos finitos: ${peso}`);
+        }
+
         if(peso < 0){
             throw new Error(`En dijkstra no se meten pesos negativos: ${peso}`);
         }

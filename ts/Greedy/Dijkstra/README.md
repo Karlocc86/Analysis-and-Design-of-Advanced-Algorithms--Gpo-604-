@@ -86,7 +86,7 @@ Devuelve un `ResultadoDijkstra` con:
 
 ## Restricciones
 
-Dijkstra solo funciona correctamente con pesos no negativos. `MyGraph.agregarArista` lanza un error si recibe un peso menor que cero.
+Dijkstra solo funciona correctamente con pesos finitos y no negativos. `MyGraph.agregarArista` lanza un error si recibe un peso menor que cero, `NaN` o `Infinity`.
 
 Tambien se lanza un error si se intenta ejecutar el algoritmo desde un vertice que no existe:
 
@@ -256,6 +256,7 @@ El archivo `test_dijkstra.ts` contiene pruebas para:
 - Cola vacia, `length` e `isEmpty`.
 - Grafos dirigidos y no dirigidos.
 - Rechazo de pesos negativos.
+- Rechazo de pesos `NaN` e `Infinity`.
 - Rechazo de vertices inexistentes.
 - Ruta mas corta frente a una ruta directa mas cara.
 - Ruta desde el origen hacia si mismo.
@@ -263,6 +264,12 @@ El archivo `test_dijkstra.ts` contiene pruebas para:
 - Dos rutas con el mismo costo.
 
 Desde la carpeta `ts`, ejecuta:
+
+```powershell
+npm test
+```
+
+El comando anterior ejecuta la suite completa de TypeScript. Tambien puede ejecutarse con el nombre especifico del algoritmo:
 
 ```powershell
 npm run test:dijkstra

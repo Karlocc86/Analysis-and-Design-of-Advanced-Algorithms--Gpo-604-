@@ -35,6 +35,14 @@ function testGraph(): void {
         /pesos negativos: -1/
     );
     assert.throws(
+        () => grafo.agregarArista("A", "C", Number.NaN),
+        /pesos finitos: NaN/
+    );
+    assert.throws(
+        () => grafo.agregarArista("A", "C", Number.POSITIVE_INFINITY),
+        /pesos finitos: Infinity/
+    );
+    assert.throws(
         () => grafo.getVecinos("NoExiste"),
         /No existe el nodo: NoExiste/
     );

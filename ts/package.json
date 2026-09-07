@@ -2,6 +2,7 @@
     "name": "algoritmos-avanzados-ts",
     "private": true,
     "scripts": {
+        "test": "npm run test:dijkstra",
         "test:dijkstra": "tsc -p tsconfig.json && node dist/Greedy/Dijkstra/test_dijkstra.js"
     },
     "devDependencies": {
