@@ -1,0 +1,11 @@
+{
+    "name": "algoritmos-avanzados-ts",
+    "private": true,
+    "scripts": {
+        "test:dijkstra": "tsc -p tsconfig.json && node dist/Greedy/Dijkstra/test_dijkstra.js"
+    },
+    "devDependencies": {
+        "@types/node": "^22.0.0",
+        "typescript": "^5.0.0"
+    }
+}

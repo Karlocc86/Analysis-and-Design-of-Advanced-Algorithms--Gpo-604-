@@ -225,25 +225,54 @@ En un grafo no dirigido, cada arista agregada se almacena en las dos listas de a
 ## Requisitos
 
 - Node.js instalado.
-- TypeScript disponible globalmente o mediante `npx`.
-- Un archivo `tsconfig.json` es recomendable para proyectos grandes, aunque los archivos pueden comprobarse individualmente.
+- Dependencias instaladas desde el directorio `ts` mediante `npm install`.
+
+La configuracion de TypeScript se encuentra en `ts/tsconfig.json` y el script de pruebas en `ts/package.json`.
+
+Para instalar las dependencias:
+
+```powershell
+cd ts
+npm install
+```
 
 Para verificar el archivo principal con TypeScript:
 
 ```powershell
-npx tsc --noEmit --strict ts/Greedy/Dijkstra/Dijkstra.ts
+npx tsc --noEmit --strict Greedy/Dijkstra/Dijkstra.ts
 ```
 
-Tambien se pueden verificar las dependencias directamente:
+Tambien se pueden verificar todos los archivos incluidos en la configuracion:
 
 ```powershell
-npx tsc --noEmit --strict `
-  ts/Greedy/Dijkstra/MyGraph..ts `
-  ts/Greedy/Dijkstra/minPriorityQueue.ts `
-  ts/Greedy/Dijkstra/Dijkstra.ts
+npx tsc -p tsconfig.json --noEmit
 ```
 
-Si `npx` pregunta si puede instalar TypeScript temporalmente, acepta la instalacion solo si deseas usar esa comprobacion.
+## Pruebas automatizadas
+
+El archivo `test_dijkstra.ts` contiene pruebas para:
+
+- Extraccion del min-heap en orden creciente.
+- Cola vacia, `length` e `isEmpty`.
+- Grafos dirigidos y no dirigidos.
+- Rechazo de pesos negativos.
+- Rechazo de vertices inexistentes.
+- Ruta mas corta frente a una ruta directa mas cara.
+- Ruta desde el origen hacia si mismo.
+- Vertices inalcanzables.
+- Dos rutas con el mismo costo.
+
+Desde la carpeta `ts`, ejecuta:
+
+```powershell
+npm run test:dijkstra
+```
+
+El comando compila los archivos con `tsconfig.json` y ejecuta el resultado con Node.js. Una ejecucion correcta muestra:
+
+```text
+Todas las pruebas de Dijkstra pasaron correctamente.
+```
 
 ## Pruebas manuales recomendadas
 
