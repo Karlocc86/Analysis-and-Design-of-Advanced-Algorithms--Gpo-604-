@@ -8,7 +8,7 @@ Esta version reproduce la implementacion de C++ usando clases de TypeScript, `Ma
 
 El directorio contiene:
 
-- `MyGraph..ts`: representa el grafo y sus aristas.
+- `MyGraph.ts`: representa el grafo y sus aristas.
 - `minPriorityQueue.ts`: implementa una cola de prioridad generica mediante un min-heap.
 - `Dijkstra.ts`: contiene el algoritmo y la reconstruccion de rutas.
 
