@@ -26,7 +26,7 @@ export class MyGraph {
     agregarArista( origen : string, destino:string, peso:number): void{
 
         if(peso < 0){
-            throw new Error('En dijkstra no se meten pesos negativos: ${peso}');
+            throw new Error(`En dijkstra no se meten pesos negativos: ${peso}`);
         }
 
         this.agregarVertice(origen);
@@ -52,7 +52,7 @@ export class MyGraph {
         const vecinos = this.listAdyacencia.get(nodo); //A diferencia del c++ no ocupo iterador q padre 
 
         if(!vecinos){
-            throw new Error('No existe el nodo: ${nodo}')
+            throw new Error(`No existe el nodo: ${nodo}`)
         }
 
         return vecinos;
