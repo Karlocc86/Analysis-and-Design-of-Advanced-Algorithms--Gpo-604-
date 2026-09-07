@@ -1,4 +1,4 @@
-import { MyGraph } from "./MyGraph.";
+import { MyGraph } from "./MyGraph";
 import { MinPriorityQueue } from "./minPriorityQueue";
 
 export class ResultadoDijkstra{
