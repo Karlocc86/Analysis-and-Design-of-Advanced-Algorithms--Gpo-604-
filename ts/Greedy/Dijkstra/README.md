@@ -12,7 +12,7 @@ El directorio contiene:
 - `minPriorityQueue.ts`: implementa una cola de prioridad generica mediante un min-heap.
 - `Dijkstra.ts`: contiene el algoritmo y la reconstruccion de rutas.
 
-> **Nota sobre el nombre del archivo:** actualmente el archivo del grafo se llama `MyGraph..ts`, con dos puntos antes de `ts`. Por eso `Dijkstra.ts` lo importa como `./MyGraph.`. Si se cambia el nombre, tambien debe actualizarse ese import.
+> **Nota sobre el nombre del archivo:** actualmente el archivo del grafo se llama `MyGraph.ts`, con dos puntos antes de `ts`. Por eso `Dijkstra.ts` lo importa como `./MyGraph.`. Si se cambia el nombre, tambien debe actualizarse ese import.
 
 ## Descripcion
 
