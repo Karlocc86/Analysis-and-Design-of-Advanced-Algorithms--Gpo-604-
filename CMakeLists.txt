@@ -22,6 +22,13 @@ add_executable(greedyDijkstra
 
 )
 
+add_executable(coinChange
+
+        "c++/Greedy/CoinChange/main.cpp"
+
+
+)
+
 enable_testing()
 
 add_executable(testDijkstra
@@ -36,6 +43,7 @@ add_library(mergeSort
         "c++/DivideAndConquer/SortAlgorithms/MergeSort/mergeSort.cpp"
 )
 
+enable_testing()
 add_executable(testMergeSort
         "c++/DivideAndConquer/SortAlgorithms/MergeSort/test_mergeSort.cpp"
 )

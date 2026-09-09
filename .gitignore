@@ -1,9 +1,8 @@
-@"
 .idea/
 cmake-build-*/
 *.exe
 *.out
 node_modules/
 ts/dist/
-"@ | Out-File -FilePath .gitignore -Encoding utf8
 .junie/
+DescargaDeZip/
