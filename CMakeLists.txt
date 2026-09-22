@@ -53,4 +53,4 @@ add_test(NAME MergeSortTest COMMAND testMergeSort)
 
 
 
-add_executable(Nqueens "c++/backtracking/Nqueens.cpp")
+add_executable(Nqueens "c++/backtracking/Nqueens/Nqueens.cpp")

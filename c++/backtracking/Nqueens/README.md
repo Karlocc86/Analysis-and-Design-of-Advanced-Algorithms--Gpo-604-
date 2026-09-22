@@ -54,15 +54,61 @@ El tiempo real es mucho menor a `n!` en la practica gracias a la poda
 temprana (columnas y diagonales ocupadas), pero `O(n!)` sigue siendo la cota
 superior del espacio de busqueda sin podar.
 
-## Estado pendiente
+## Uso del programa
 
-- El archivo `Nqueens.cpp` no compila actualmente: en la linea de
-  `negDiag.insert(r-c);` hay un caracter `s` suelto que rompe la
-  compilacion.
-- El archivo no tiene una funcion `main`, por lo que todavia no se puede
-  ejecutar como programa independiente ni mostrar un ejemplo de salida real.
+El ejecutable solicita el tamano del tablero `n` y muestra cuantas
+soluciones existen, ademas del tablero de la primera solucion encontrada.
+
+### Ejemplo de ejecucion
+
+Entrada:
+
+```text
+Ingrese el tamano del tablero (n): 4
+```
+
+Salida:
+
+```text
+Soluciones encontradas: 2
+Primera solucion:
+.Q..
+...Q
+Q...
+..Q.
+```
+
+## Requisitos
+
+- Compilador compatible con C++17 o superior.
+- CMake 4.2 o superior si se utiliza la configuracion del proyecto.
+
+## Compilacion directa
+
+Desde la raiz del repositorio:
+
+```bash
+g++ -std=c++17 c++/backtracking/Nqueens/Nqueens.cpp -o nqueens
+```
+
+En Windows:
+
+```powershell
+C:\msys64\ucrt64\bin\g++.exe -std=c++17 c++/backtracking/Nqueens/Nqueens.cpp -o nqueens.exe
+```
+
+## Compilacion con CMake
+
+```bash
+cmake -S . -B build
+cmake --build build --target Nqueens
+```
+
+El ejecutable se genera como `Nqueens` en Linux/macOS o `Nqueens.exe` en
+Windows, dentro del directorio de compilacion correspondiente.
 
 ## Archivos
 
-- `Nqueens.cpp`: implementacion de `backtrack` y `solveMqueens`.
+- `Nqueens.cpp`: implementacion de `backtrack`, `solveMqueens` y un `main`
+  interactivo para probar el algoritmo.
 - `Nqueens.md`: documentacion del problema y del algoritmo.
