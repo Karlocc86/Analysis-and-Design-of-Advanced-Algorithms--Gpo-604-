@@ -50,3 +50,7 @@ add_executable(testMergeSort
 
 target_link_libraries(testMergeSort PRIVATE mergeSort)
 add_test(NAME MergeSortTest COMMAND testMergeSort)
+
+
+
+add_executable(Nqueens "c++/backtracking/Nqueens.cpp")
